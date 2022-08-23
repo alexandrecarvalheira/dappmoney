@@ -7,13 +7,17 @@ import { useAccount } from "wagmi";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 export function Header() {
-  const { address, isConnecting, isConnected } = useAccount();
+  const { isConnected } = useAccount();
 
   return (
     <HeaderContainer>
       <HeaderContent>
         <img src={logoImg} />
-        <ConnectButton />
+        <ConnectButton
+          accountStatus="address"
+          chainStatus="icon"
+          showBalance={false}
+        />
         <Dialog.Root>
           <Dialog.Trigger asChild>
             <NewTransactionButton hidden={!isConnected}>
