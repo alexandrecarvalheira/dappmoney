@@ -9,11 +9,13 @@ import {
   TransactionsContainer,
   TransactionsTable,
 } from "./styles";
+import { useAccount } from "wagmi";
 
 export function Transactions() {
   const { transactions } = useContext(TransactionsContext);
+  const { address, isConnecting, isConnected } = useAccount();
 
-  return (
+  return isConnected ? (
     <div>
       <Header />
       <Summary />
@@ -42,5 +44,7 @@ export function Transactions() {
         </TransactionsTable>
       </TransactionsContainer>
     </div>
+  ) : (
+    <Header />
   );
 }
