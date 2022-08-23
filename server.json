@@ -1,0 +1,36 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "description": "dev site",
+      "type": "income",
+      "category": "venda",
+      "price": 150,
+      "createdAt": "2015-07-01T00:00:00Z"
+    },
+    {
+      "id": 2,
+      "description": "dev sitioe",
+      "type": "outcome",
+      "category": "venda",
+      "price": 100,
+      "createdAt": "2015-07-01T00:00:00Z"
+    },
+    {
+      "description": "comida",
+      "price": 15,
+      "type": "outcome",
+      "category": "comida",
+      "createdAt": "2022-08-22T16:18:44.587Z",
+      "id": 3
+    },
+    {
+      "description": "Peixe cru",
+      "price": 15,
+      "type": "outcome",
+      "category": "Alimentação",
+      "createdAt": "2022-08-22T16:31:12.800Z",
+      "id": 4
+    }
+  ]
+}
