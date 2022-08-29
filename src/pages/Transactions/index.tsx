@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState } from "react";
-import { Header } from "../../components/Header/index";
+import { useContext } from "react";
+import { HeaderTransaction } from "../../components/HeaderTransaction/index";
 import { Summary } from "../../components/Summary";
 import { TransactionsContext } from "../../contexts/TransactionsContext";
 import { dateFormatter, priceFormatter } from "../../utils/formatter";
@@ -13,11 +13,11 @@ import { useAccount } from "wagmi";
 
 export function Transactions() {
   const { transactions } = useContext(TransactionsContext);
-  const { address, isConnecting, isConnected } = useAccount();
+  const { isConnected } = useAccount();
 
   return isConnected ? (
     <div>
-      <Header />
+      <HeaderTransaction />
       <Summary />
 
       <TransactionsContainer>
@@ -45,6 +45,6 @@ export function Transactions() {
       </TransactionsContainer>
     </div>
   ) : (
-    <Header />
+    <HeaderTransaction />
   );
 }

@@ -1,12 +1,12 @@
-import { HeaderContainer, HeaderContent, NewTransactionButton } from "./styles";
+import { HeaderContainer, HeaderContent, NewResourceButton } from "./styles";
 import * as Dialog from "@radix-ui/react-dialog";
 
 import logoImg from "../../assets/logo.svg";
-import { NewTransactionModal } from "../NewTransactionModal";
+import { NewResourceModal } from "../NewResourceModal";
 import { useAccount } from "wagmi";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 
-export function Header() {
+export function HeaderFactory() {
   const { isConnected } = useAccount();
 
   return (
@@ -20,11 +20,11 @@ export function Header() {
         />
         <Dialog.Root>
           <Dialog.Trigger asChild>
-            <NewTransactionButton hidden={!isConnected}>
-              Nova Transação
-            </NewTransactionButton>
+            <NewResourceButton hidden={!isConnected}>
+              Create new Resource
+            </NewResourceButton>
           </Dialog.Trigger>
-          <NewTransactionModal />
+          <NewResourceModal />
         </Dialog.Root>
       </HeaderContent>
     </HeaderContainer>

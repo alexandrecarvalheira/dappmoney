@@ -32,7 +32,7 @@ const wagmiClient = createClient({
   connectors,
   provider,
 });
-import { Transactions } from "./pages/Transactions";
+import { Factory } from "./pages/Factory";
 export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -47,7 +47,7 @@ export function App() {
           })}
         >
           <TransactionsProvider>
-            <Transactions />
+            <Factory />
           </TransactionsProvider>
         </RainbowKitProvider>
       </WagmiConfig>
